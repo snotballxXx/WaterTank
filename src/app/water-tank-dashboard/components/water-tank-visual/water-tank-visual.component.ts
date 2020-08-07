@@ -7,7 +7,6 @@ import { WaterTank } from '../../models/water-tank.interface'
     styleUrls: ['./water-tank-visual.component.scss']
 })
 export class WaterTankVisual {
-
     @Input()
     tank: WaterTank;
 }

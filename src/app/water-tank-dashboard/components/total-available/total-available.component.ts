@@ -3,14 +3,12 @@ import { WaterTank } from '../../models/water-tank.interface'
 
 @Component({
     selector: 'total-water',
-    template: `
-        <div>
-        Total Available Water: {{ total() }} litres
-        </div>
-    `
+    template: 
+       `<div>
+            Total Available Water: {{ total() }} litres
+        </div>`
 })
 export class TotalAvailableWater {
-
     @Input()
     tanks: WaterTank[];
 
