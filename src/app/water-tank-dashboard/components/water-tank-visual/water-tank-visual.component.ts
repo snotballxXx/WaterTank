@@ -1,4 +1,5 @@
-import { Component } from '@angular/core'
+import { Component, Input } from '@angular/core'
+import { WaterTank } from '../../models/water-tank.interface'
 
 @Component({
     selector: 'tank-ui',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core'
     styleUrls: ['./water-tank-visual.component.scss']
 })
 export class WaterTankVisual {
-
+    @Input()
+    tank: WaterTank;
 }

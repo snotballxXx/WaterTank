@@ -3,8 +3,13 @@
 </div>
 
 <div>
-    <total-water></total-water>
+    <total-water [tanks]='tanks'></total-water>
+</div>
+
+<div *ngFor='let tank of tanks;'>
+    <tank-ui [tank]='tank'></tank-ui>
+</div>
+
+<div>
     <last-update></last-update>
-    <tank-ui></tank-ui>
-    <tank-ui></tank-ui>
 </div>
