@@ -26,5 +26,19 @@
 		<ellipse transform="matrix(-0.1791 -0.9838 0.9838 -0.1791 14.857 53.6464)" fill="#CCCCCC" cx="29.809" cy="20.625" rx="2.667" ry="10.5"></ellipse>
 	</g>
 </svg>
+<div>
+	<div  *ngIf="editing">
+		<input type="text" [value]="tank.name" (input)="onNameChange(name.value)" #name>
+		<input type="text" [value]="tank.name" (input)="onNameChange(name.value)" #diameter>
+		<input type="text" [value]="tank.name" (input)="onNameChange(name.value)" #height>
+	</div>
 
-<div>{{ tank.name }} - {{ tank.level}} litres</div>
+	<div *ngIf="!editing">
+		{{ tank.name }}
+	</div>
+	<div>
+		{{ tank.level}} litres
+	</div>	
+
+	<button (click)="onToggleEdit()">{{ editing ? 'Save' : 'Edit'}}</button>
+</div>

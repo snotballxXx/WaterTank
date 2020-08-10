@@ -22,4 +22,8 @@ export class WaterTankDashboard {
             capacity: 22000
         }
     ];
+
+    onEdit(event: any) : void {
+        console.log(event);
+    }
 }

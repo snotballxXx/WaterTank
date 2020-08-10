@@ -7,7 +7,7 @@
 </div>
 
 <div *ngFor='let tank of tanks;'>
-    <tank-ui [tank]='tank'></tank-ui>
+    <tank-ui [tank]='tank' (edit)="onEdit($event)"></tank-ui>
 </div>
 
 <div>
