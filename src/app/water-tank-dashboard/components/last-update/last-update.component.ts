@@ -1,14 +1,16 @@
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 
 @Component({
     selector: 'last-update',
     template: `<div>
-        Last Update: {{ lastUpdate() | date: 'HH:mm.ss dd MMMM y' }}
+        Last Update: {{ time | date: 'HH:mm.ss dd MMMM y' }}
     </div>` 
 })
-export class LastUpdate {
+export class LastUpdate implements OnInit {
 
-    lastUpdate() : Number {
-        return Date.now();
+    time: number;
+
+    ngOnInit() {
+        this.time = Date.now();
     }
 }

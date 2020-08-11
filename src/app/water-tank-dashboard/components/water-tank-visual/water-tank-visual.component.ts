@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core'
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core'
 import { WaterTank } from '../../models/water-tank.interface'
 
 
@@ -7,7 +7,7 @@ import { WaterTank } from '../../models/water-tank.interface'
     templateUrl: './water-tank-visual.component.html',
     styleUrls: ['./water-tank-visual.component.scss']
 })
-export class WaterTankVisual {
+export class WaterTankVisual implements OnInit {
     @Input()
     tank: WaterTank;
 
@@ -16,15 +16,30 @@ export class WaterTankVisual {
 
     editing: boolean = false;
 
+    percentage: number;
+
+    ngOnInit() {
+        this.percentage = 0;
+    }
+
     onToggleEdit() : void {
         this.editing = !this.editing;
 
         if (!this.editing) {
-            this.edit.emit(this.tank.name);
+            this.edit.emit(this.tank);
         }
+        this.percentage = 50;
     }
 
     onNameChange(value: string) : void {
         this.tank.name = value;
+    }
+
+    onDiameterChange(value: string) : void {
+        this.tank.diameter = parseFloat(value);
+    }
+
+    onHeightChange(value: string) : void {
+        this.tank.height = parseFloat(value);
     }
 }
