@@ -12,18 +12,18 @@ export class WaterTankDashboard {
         {
             name: 'Tank 1',
             id: 1,
-            level: 80,
-            capacity: 22000,
             diameter: 3.3,
-            height: 3.1
+            height: 3.1,
+            percentage: 80,
+            available: 23020
         },
         {
             name: 'Tank 2',
             id: 2,
-            level: 70,
-            capacity: 22000,
             diameter: 3.3,
-            height: 3.1
+            height: 3.1,
+            percentage: 33,
+            available: 7490
         }
     ];
 

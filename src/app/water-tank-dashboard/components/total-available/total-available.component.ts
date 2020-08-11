@@ -15,7 +15,7 @@ export class TotalAvailableWater {
     total() : number {
         let total = 0;
         for (let i = 0; i < this.tanks.length;i++)
-            total += this.tanks[i].level;
+            total += this.tanks[i].available;
         return total;
     }
 }

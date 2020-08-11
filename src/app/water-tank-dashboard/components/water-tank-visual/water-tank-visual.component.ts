@@ -16,10 +16,7 @@ export class WaterTankVisual implements OnInit {
 
     editing: boolean = false;
 
-    percentage: number;
-
     ngOnInit() {
-        this.percentage = 0;
     }
 
     onToggleEdit() : void {
@@ -28,7 +25,6 @@ export class WaterTankVisual implements OnInit {
         if (!this.editing) {
             this.edit.emit(this.tank);
         }
-        this.percentage = 50;
     }
 
     onNameChange(value: string) : void {

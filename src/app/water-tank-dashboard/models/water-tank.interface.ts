@@ -1,8 +1,8 @@
 export interface WaterTank {
     name: string,
     id: number,
-    level: number,
-    capacity: number,
     diameter: number,
-    height: number
+    height: number,
+    percentage: number,
+    available: number
 }
