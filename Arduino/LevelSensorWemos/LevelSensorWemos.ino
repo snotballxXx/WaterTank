@@ -5,7 +5,7 @@
 
 // Define Trig and Echo pin:
 #define trigPin 5
-#define echoPin1 2
+#define echoPin1 14
 #define echoPin2 4
 
 struct EchoResponse 
@@ -118,12 +118,12 @@ void setup(void) {
 void loop(void) {
   server.handleClient();
 
-  if (millis() < 10000)return;
+  //if (millis() < 10000)return;
    // Trigger the sensor by setting the trigPin low for 10 microseconds:
   digitalWrite(trigPin, HIGH);
   delayMicroseconds(10);
   digitalWrite(trigPin, LOW);
-  delay(500);
+  delay(1000);
   
   // Calculate the distance:
   channel1._distance = channel1._duration * 0.034 / 2;

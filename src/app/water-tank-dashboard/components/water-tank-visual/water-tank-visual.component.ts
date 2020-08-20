@@ -16,7 +16,13 @@ export class WaterTankVisual implements OnInit {
 
     editing: boolean = false;
 
+    waterColor: string;
+
     ngOnInit() {
+        if (this.tank.percentage < 50)
+            this.waterColor = 'Red';
+        else 
+            this.waterColor = 'Aqua';
     }
 
     onToggleEdit() : void {

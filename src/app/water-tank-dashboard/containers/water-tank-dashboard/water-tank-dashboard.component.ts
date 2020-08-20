@@ -22,7 +22,7 @@ export class WaterTankDashboard {
             id: 2,
             diameter: 3.3,
             height: 3.1,
-            percentage: 33,
+            percentage: 10,
             available: 7490
         }
     ];
