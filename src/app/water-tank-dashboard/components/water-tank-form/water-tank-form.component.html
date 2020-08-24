@@ -1,0 +1,32 @@
+<div>
+    {{ detail | json}}
+
+    <form #myForm="ngForm" novalidate>
+        <div>
+         <label>
+            Name
+            <input type="text" [ngModel]="detail?.name" name="name"  required #name="ngModel" >
+        </label>         
+        <div *ngIf="name.errors?.required" class="error">
+            Name is a required field
+        </div> 
+        </div>
+
+        <div>
+         <label>
+            Height
+            <input type="number" [ngModel]="detail?.height" name="height"  required #height="ngModel" >
+        </label>  
+        {{ height.errors | json }}           
+        </div>
+
+
+        {{ myForm.value | json }}
+        <div>
+           Valid: {{ myForm.valid | json }}
+        </div>
+        <button type="submit" [disabled]="myForm.invalid">Update</button>
+    </form>
+
+
+</div>

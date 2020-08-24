@@ -1,33 +1,30 @@
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 import { WaterTank } from '../../models/water-tank.interface'
+import { WaterTankDashboardService } from '../../water-tank-dashboard.service'
 
 @Component({
     selector:'tank-dash',
     templateUrl: './water-tank-dashboard.component.html',
     styleUrls: ['water-tank-dashboard.component.scss']
 })
-export class WaterTankDashboard {
+export class WaterTankDashboard implements OnInit {
 
-    tanks: WaterTank[] = [
-        {
-            name: 'Tank 1',
-            id: 1,
-            diameter: 3.3,
-            height: 3.1,
-            percentage: 80,
-            available: 23020
-        },
-        {
-            name: 'Tank 2',
-            id: 2,
-            diameter: 3.3,
-            height: 3.1,
-            percentage: 10,
-            available: 7490
-        }
-    ];
+    tanks: WaterTank[];
 
-    onEdit(event: any) : void {
+    constructor(private waterTankDashboardService : WaterTankDashboardService) {
+    }
+
+    ngOnInit() {
+        this.waterTankDashboardService.getTanks()
+            .subscribe((data: WaterTank[]) => {
+                this.tanks = data;
+            });
+            
+    }
+
+    onEdit(event: WaterTank) : void {
         console.log(event);
+        this.waterTankDashboardService.updateTank(event)
+            .subscribe();
     }
 }
