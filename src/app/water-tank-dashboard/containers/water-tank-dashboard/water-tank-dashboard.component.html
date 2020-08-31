@@ -7,9 +7,6 @@
 </div>
 
 <div *ngFor='let tank of tanks;'>
-    <tank-ui [tank]='tank' (edit)="onEdit($event)"></tank-ui>
-</div>
-
-<div>
-    <last-update></last-update>
+    <tank-ui [tank]='tank'></tank-ui>
+    <water-tank-form [detail] = 'tank' (onSubmit)="onSubmit($event)"></water-tank-form>
 </div>

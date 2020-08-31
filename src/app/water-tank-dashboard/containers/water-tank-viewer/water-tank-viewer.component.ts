@@ -22,4 +22,12 @@ export class WaterTankViewer implements OnInit {
             this.waterTank = data;
         });
     }
+
+    onSubmit(tank: WaterTank) {
+        this.waterTankService.updateTank(tank)
+        .subscribe((data: WaterTank) => {
+            this.waterTank = Object.assign(this.waterTank, data);
+            console.log('WaterTank', this.waterTank);
+        });
+    }
 }

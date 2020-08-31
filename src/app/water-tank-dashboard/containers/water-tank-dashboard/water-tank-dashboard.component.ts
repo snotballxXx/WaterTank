@@ -22,9 +22,16 @@ export class WaterTankDashboard implements OnInit {
             
     }
 
-    onEdit(event: WaterTank) : void {
-        console.log(event);
-        this.waterTankDashboardService.updateTank(event)
-            .subscribe();
+    onSubmit(tank: WaterTank) {
+        this.waterTankDashboardService.updateTank(tank)
+        .subscribe((data: WaterTank) => {
+
+            this.tanks = this.tanks.filter((tank: WaterTank) => {
+                if (tank.id === data.id)
+                    tank = Object.assign(tank, data);
+                return tank;
+            });
+
+        });
     }
 }

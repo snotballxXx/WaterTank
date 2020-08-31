@@ -19,7 +19,8 @@ import { FormsModule } from '@angular/forms'
     ],
     exports: [
         WaterTankDashboard, 
-        WaterTankViewer
+        WaterTankViewer,
+        LastUpdate
     ],
     declarations: [
         WaterTankDashboard,

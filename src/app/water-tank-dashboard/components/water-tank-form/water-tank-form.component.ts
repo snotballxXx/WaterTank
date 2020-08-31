@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core'
+import { Component, Input, Output, EventEmitter } from '@angular/core'
 import { WaterTank } from '../../models/water-tank.interface'
 
 
@@ -12,5 +12,12 @@ export class WaterTankForm {
     @Input()
     detail: WaterTank;
 
+    @Output()
+    onSubmit: EventEmitter<WaterTank> = new EventEmitter<WaterTank>();
 
+    formSubmitted(tank: WaterTank, valid: boolean) {
+        if (valid) {
+            this.onSubmit.emit(tank);
+        }
+    }
 }

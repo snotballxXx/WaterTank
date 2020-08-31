@@ -1,32 +1,47 @@
 <div>
-    {{ detail | json}}
-
-    <form #myForm="ngForm" novalidate>
+    <form (ngSubmit)="formSubmitted(myForm.value, myForm.valid)" #myForm="ngForm" novalidate>
         <div>
-         <label>
-            Name
-            <input type="text" [ngModel]="detail?.name" name="name"  required #name="ngModel" >
-        </label>         
-        <div *ngIf="name.errors?.required" class="error">
-            Name is a required field
-        </div> 
+            <label>
+                Name
+                <input type="text" [ngModel]="detail?.name" name="name"  required #name="ngModel" >
+            </label>         
+            <div *ngIf="name.errors?.required" class="error">
+                Name is a required field
+            </div> 
         </div>
-
         <div>
-         <label>
-            Height
-            <input type="number" [ngModel]="detail?.height" name="height"  required #height="ngModel" >
-        </label>  
-        {{ height.errors | json }}           
+            <label>
+                ID
+                <input type="number" [ngModel]="detail?.id" name="id"  required #id="ngModel" >
+            </label>  
         </div>
-
-
-        {{ myForm.value | json }}
         <div>
-           Valid: {{ myForm.valid | json }}
+            <label>
+                Diameter
+                <input type="number" [ngModel]="detail?.diameter" name="diameter"  required #id="ngModel" >
+            </label>  
+        </div>
+        <div>
+            <label>
+                Available
+                <input type="number" [ngModel]="detail?.available" name="available"  required #id="ngModel" >
+            </label>  
+        </div>
+        <div>
+            <label>
+                Percentage
+                <input type="number" [ngModel]="detail?.percentage" name="percentage"  required #id="ngModel" >
+            </label>  
+        </div>
+        <div>
+            <label>
+                Height
+                <input type="number" [ngModel]="detail?.height" name="height"  required #height="ngModel" >
+            </label>  
+            <div *ngIf="height.errors?.required" class="error">
+                Height is a required field
+            </div>
         </div>
         <button type="submit" [disabled]="myForm.invalid">Update</button>
     </form>
-
-
 </div>

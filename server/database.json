@@ -3,10 +3,10 @@
     {
       "name": "Tank One",
       "id": 1,
-      "diameter": 3.3333333,
-      "height": 3.1,
-      "percentage": 80,
-      "available": 500
+      "diameter": 3.3,
+      "available": 1001,
+      "percentage": 50,
+      "height": 3.1
     }
   ]
 }
